@@ -66,7 +66,7 @@ export const DELETE = async (request: NextRequest) => {
    );
   }
   readDB();
-
+  const body = await request.json();
   const foundmessageId = DB.message.findIndex(
     (x:any) => x.messageId === body.messageId
   );
