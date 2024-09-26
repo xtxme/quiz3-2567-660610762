@@ -59,7 +59,7 @@ const adapter = onProduction
   ? new MemorySync()
   : new JSONFileSync("DatabaseFile.json");
 let lowDB = new LowSync(adapter, originalDB);
-export let DB = onProduction ? _.cloneDeep(originalDB) : lowDB.data;
+export let DB:any = onProduction ? _.cloneDeep(originalDB) : lowDB.data;
 
 export function resetDB() {
   if (onProduction) {
